@@ -1,0 +1,13 @@
+<div class="card border-primary mb-3" style="max-width: 18rem;" [routerLink]="['postdetail', post.id]">
+    <div class="card-header ">
+        <h3>{{post.title}}</h3>
+        <p class="text-secondary">{{post.publisDate}}</p>
+    </div>
+    <div class="card-body text-primary">
+        <p class="card-text">{{post.text}}</p>
+        <div class="d-flex flex-row">
+            <h5 class="card-title text-secondary">{{post.author}}</h5>
+            <p class="ms-3 bg-info rounded text-white p-1">Add Favourite</p>
+        </div>
+    </div>
+</div>
