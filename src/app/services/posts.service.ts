@@ -11,12 +11,18 @@ export class PostServices {
 
   httpClient = inject(HttpClient)
 
+
   private BaseUrl: string = 'https://my-json-server.typicode.com/mariogiron/blog-server/posts';
 
   getAll(): Promise<Post[]>{
     return firstValueFrom(
     this.httpClient.get<Post[]>(this.BaseUrl)
     )
+  }
+
+  getById(id:number){
+     this.getAll()
+    
   }
 
  

@@ -1,1 +1,15 @@
-<p>create-post works!</p>
+<section class="container mt-3">
+    <form [formGroup]="formPost" (ngSubmit)="getDataPost()">
+      <div>
+        <label for="title" class="form-label">Título:</label>
+        <input type="text" class="form-control" formControlName="title">
+      </div>
+      <div>
+        <label for="text" class="form-label">Texto:</label>
+        <textarea class="form-control" formControlName="text" cols="30" rows="10"></textarea>
+      </div>
+      <div>
+        <label for="title" class="form-label">Autor:</label>
+        <input type="text" class="form-control" formControlName="author">
+      </div>
+      <input type="submit" class="btn btn-danger mt-3" value="Insertar">

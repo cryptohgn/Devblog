@@ -10,6 +10,7 @@ import { CreatePostComponent } from './components/create-post/create-post.compon
 import { PostCardComponent } from './components/post-card/post-card.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CardComponent } from './components/card/card.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CardComponent } from './components/card/card.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
+    HttpClientModule, 
+    ReactiveFormsModule, AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
