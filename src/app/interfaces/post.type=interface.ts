@@ -3,6 +3,6 @@ export interface Post {
     title: string;
     text: string;
     author: string;
-    publisDate: Date;
+    publishDate: Date;
     
 }

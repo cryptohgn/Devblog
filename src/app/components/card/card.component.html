@@ -1,13 +1,17 @@
-<div class="card border-primary mb-3" style="max-width: 18rem;" [routerLink]="['postCarddetail', postCard.id]">
+<div class="card border-primary mb-3" style="max-width: 18rem;">
     <div class="card-header ">
         <h3>{{postCard.title}}</h3>
-        <p class="text-secondary">{{postCard.publisDate}}</p>
     </div>
     <div class="card-body text-primary">
+        <p class="text-secondary ms-2">{{postCard.publishDate}}</p>
         <p class="card-text">{{postCard.text}}</p>
-        <div class="d-flex flex-row">
-            <h5 class="card-title text-secondary">{{postCard.author}}</h5>
-            <p class="ms-3 bg-info rounded text-white p-1">Add Favourite</p>
-        </div>
     </div>
+    <div class="d-flex flex-row justify-content-end">
+    <h5 class="card-title text-secondary me-2">{{postCard.author}}</h5>
+    
+</div>
+<div class="d-flex flex-row justify-content-end">
+    <a class="btn btn-secondary ms-3 p-2 my-2"[routerLink]="['/postdetail', postCard.id]">Leer</a>
+    <a class="btn btn-info ms-3 bg-info stretched-link rounded text-white p-2 my-2 me-2">Add Favourite</a>
+</div>
 </div>
