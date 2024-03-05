@@ -22,7 +22,7 @@ export class DetailPostComponent {
       let response = await this.servicePost.getAll();
       this.myArrPost = response;
       console.log(this.myArrPost)
-      this.myPost = this.myArrPost.find((post)=> post.id === id)
+      this.myPost = this.myArrPost.find((post)=> post.id == id)
       console.log(this.myPost)
     })
   }

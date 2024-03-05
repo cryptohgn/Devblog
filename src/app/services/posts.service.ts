@@ -20,9 +20,10 @@ export class PostServices {
     )
   }
 
-  getById(id:number){
-     this.getAll()
-    
+  insertPost(newPost: Post ): Promise<Post>{
+    return firstValueFrom(
+    this.httpClient.post<Post>(this.BaseUrl, newPost)
+    )
   }
 
  

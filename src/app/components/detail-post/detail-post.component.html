@@ -1,1 +1,8 @@
-<p>detail-post works!</p>
+<div class="container mt-5">
+    <h2 class="display-5 link-body-emphasis mb-1">{{myPost?.title}}</h2>
+    <p class="blog-post-meta">{{myPost?.publishDate}} Autor: <a href="#">{{myPost?.author}}</a></p>
+    <div class="p-4 mb-3 bg-body-tertiary rounded">
+        {{myPost?.text}}
+    </div>
+    <a class="btn btn-secondary ms-3 p-2 my-2" [routerLink]="'/allposts'">Volver</a>
+</div>
