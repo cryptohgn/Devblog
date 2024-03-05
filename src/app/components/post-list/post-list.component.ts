@@ -1,4 +1,4 @@
-import { Component, Input, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Post } from 'src/app/interfaces/post.type=interface';
 import { PostServices } from 'src/app/services/posts.service';
 
@@ -9,7 +9,6 @@ import { PostServices } from 'src/app/services/posts.service';
 })
 export class PostListComponent {
   
-
   allPost: Post[] = [];
 
   servicePost = inject(PostServices);
@@ -17,6 +16,7 @@ export class PostListComponent {
   async ngOnInit(){
     let response = await this.servicePost.getAll();
     this.allPost = response;
+    //console.log(this.allPost)
   }
 
 }

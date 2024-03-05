@@ -8,6 +8,14 @@ import { Input } from '@angular/core'
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
-  @Input() arrPost: Post[]=[];
+  @Input() arrPost: Post[] = [];
+
+  postCard!: Post;
+
+  ngOnInit(){
+    this.arrPost.forEach(post => {
+      this.postCard = post;
+    });
+  }
 
 }

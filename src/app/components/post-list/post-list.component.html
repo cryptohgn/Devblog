@@ -1,6 +1,6 @@
 <div class="container">
-    <section *ngFor="let post of allPost">
-       <app-card arrPost={{allPost}}></app-card>
+    <section class="container-fluid row" *ngFor="let post of allPost">
+       <app-card class="col" [arrPost]='allPost'></app-card>
     </section>
     
 </div>
