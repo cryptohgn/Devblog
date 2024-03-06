@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PostListComponent } from './components/post-list/post-list.component';
@@ -10,7 +9,7 @@ import { CreatePostComponent } from './components/create-post/create-post.compon
 import { PostCardComponent } from './components/post-card/post-card.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CardComponent } from './components/card/card.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,13 +19,17 @@ import { ReactiveFormsModule } from '@angular/forms';
     CreatePostComponent,
     PostCardComponent,
     HeaderComponent,
-    CardComponent
+    CardComponent, 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule, 
-    ReactiveFormsModule, AppRoutingModule
+    ReactiveFormsModule, 
+    AppRoutingModule,
+    FormsModule, 
+    ReactiveFormsModule
+     
   ],
   providers: [],
   bootstrap: [AppComponent]

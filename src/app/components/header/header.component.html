@@ -1,19 +1,21 @@
 <div class="container w-100 justify-content-center d-flex flex-row">
     <nav class="navbar navbar-expand-lg navbar-light bg-light ms-5 my-3 col-8">
-        <a class="navbar-brand" href="#" [routerLink]="'/allposts'"><h1>myDevBlog</h1></a>
+        <a class="navbar-brand"  [routerLink]="'/allposts'"><h1>myDevBlog</h1></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#" [routerLink]="'/allposts'"><strong>All Posts</strong><span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">New Post</a>
+            <a class="nav-item nav-link active" [routerLink]="'/allposts'"><strong>All Posts</strong><span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" [routerLink]="'/create-post'" >New Post</a>
           </div>
         </div>
-        <form class="form-inline ms-5 d-flex flex-row">
-            <input class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0 ms-2 mx-3" type="submit">Search</button>
-          </form>
+        <!-- <form class="form-inline ms-5 d-flex flex-row" [formcontrol]="formSearch" (ngSubmit)="buscarPost()">
+            <input class="form-control mr-sm-2 " type="search" placeholder="Buscar Post" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0 ms-2 mx-3" type="submit">Buscar</button>
+          </form> -->
+          <input class="form-control" type="text" name="buscar" [(ngModel)]="formSearch" placeholder="Buscar Post">
+          <button class="btn btn-outline-success my-2 my-sm-0 ms-2 mx-3" (click)="buscarPost()">Buscar</button>
       </nav>
       <hr>
 </div>

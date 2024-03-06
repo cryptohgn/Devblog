@@ -1,15 +1,15 @@
 <section class="container mt-3">
     <form [formGroup]="formPost" (ngSubmit)="postDataPost()">
       <div>
-        <label for="title" class="form-label">Título:</label>
+        <label for="title" class="form-label my-3">Título:</label>
         <input type="text" class="form-control" formControlName="title">
       </div>
       <div>
-        <label for="text" class="form-label">Texto:</label>
+        <label for="text" class="form-label my-3">Texto:</label>
         <textarea class="form-control" formControlName="text" cols="30" rows="10"></textarea>
       </div>
       <div>
-        <label for="title" class="form-label">Autor:</label>
+        <label for="title" class="form-label my-3">Autor:</label>
         <input type="text" class="form-control" formControlName="author">
       </div>
-      <input type="submit" class="btn btn-danger mt-3" value="Insertar">
+      <input type="submit" class="btn btn-danger my-3" value="Insertar">
