@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Post } from 'src/app/interfaces/post.type=interface';
 import { Input } from '@angular/core'
 
@@ -9,11 +9,19 @@ import { Input } from '@angular/core'
 })
 export class CardComponent {
   @Input() unPost!: Post;
+  @Output() idPost: EventEmitter<number> = new EventEmitter();
 
-  postCard!: Post;
+  id: number = 0;
 
-  ngOnInit(){
-   
+  handleFav(idP:number){
+    this.id = idP;
+    this.idPost.emit(this.id)
+    // console.log(this.id)
   }
 
 }
+
+
+// pasos para lleva el elemento a favs
+// 1 - Crear output del id
+// Creamos la funcion que envia el emit

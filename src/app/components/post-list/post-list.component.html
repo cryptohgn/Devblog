@@ -1,5 +1,12 @@
-<div class="container row">
+
+<div class="container row mt-3">
+    <div class="col-10 d-flex flex-row mb-5">
+        <input class="form-control w-25 mb-2 p-1 ms-3" type="text" name="buscar" [(ngModel)]="formSearch" placeholder="Buscar Post">
+            <button class="btn btn-outline-info mb-2 p-1 ms-3" (click)="buscarPost()">Buscar</button>
+            <button *ngIf="formSearch != ''" class="btn btn-outline-danger mb-2 p-1 ms-3" (click)="resetPost()">Reset</button>
+        <div class="ms-5"><p><strong>Favoritos:</strong> <span class="text-info-emphasis" *ngFor="let post of arrFavs"> {{post.title}}</span> </p></div>
+    </div>
     <section class="col-3" *ngFor="let post of allPost">
-       <app-card [unPost]="post"></app-card>
+       <app-card [unPost]="post" (idPost)="idForFav($event)"></app-card>
     </section>
 </div>

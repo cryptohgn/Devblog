@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { Post } from 'src/app/interfaces/post.type=interface';
 import { PostServices } from 'src/app/services/posts.service';
 
@@ -8,15 +8,45 @@ import { PostServices } from 'src/app/services/posts.service';
   styleUrls: ['./post-list.component.css']
 })
 export class PostListComponent {
+
+  
+  @Input() filtPost: Post[] = []; 
+
+  formSearch: string = '';
   
   allPost: Post[] = [];
 
-  servicePost = inject(PostServices);
+  postFav!:any;
 
+  arrFavs: Post[] = [];
+
+  servicePost = inject(PostServices);
+  
   async ngOnInit(){
     let response = await this.servicePost.getAll();
     this.allPost = response;
     //console.log(this.allPost)
   }
+
+  async buscarPost() {
+   
+    this.allPost = this.allPost.filter((post) =>
+      post.title.toLocaleLowerCase().includes(this.formSearch.toLocaleLowerCase())
+    );
+  }
+
+  resetPost(){
+    this.formSearch = "";
+    this.ngOnInit()
+  }
+
+  idForFav($event: number){
+    this.postFav = this.allPost.find((post) =>
+      post.id == $event);
+    this.arrFavs.push(this.postFav)
+    console.log(this.arrFavs)
+    
+  }
+
 
 }

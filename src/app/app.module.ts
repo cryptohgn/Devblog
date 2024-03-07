@@ -10,6 +10,7 @@ import { PostCardComponent } from './components/post-card/post-card.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CardComponent } from './components/card/card.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgIconsModule } from '@ng-icons/core';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CreatePostComponent,
     PostCardComponent,
     HeaderComponent,
-    CardComponent, 
+    CardComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +29,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule, 
     AppRoutingModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule, 
+    NgIconsModule, 
      
   ],
   providers: [],
